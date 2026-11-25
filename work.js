@@ -1,0 +1,20 @@
+window.WORK = [
+  {f:'indie', who:'Independent', t:'AB Equine Therapy', img:'img/ab-desktop.webp', phone:'img/ab-phone.webp', award:'Best academy', kind:'Design and build', url:'abequinetherapy.com', hue:'#c8b7c9', big:true,
+   d:'A membership based online academy for equine wellness education. I designed the site and built the whole platform: LearnDash courses on anatomy, bodywork and care, WooCommerce memberships and checkout, and a marketplace of downloadable guides.',
+   s:['Web design','LearnDash','WooCommerce','Memberships','WordPress']},
+  {f:'pro', who:'Unravel', t:'Capital Rivers Commercial', img:'img/capital-rivers.webp', award:'Best data feed', kind:'Design and API integration', url:'capitalrivers.com', hue:'#9cb2a5', big:true,
+   d:'A site for a Northern California commercial real estate firm, with property listings fed live from the Buildout API. The sync writes to a custom table, runs in scheduled chunks to stay inside host timeouts, and matches each listing to its brokers so visitors can filter by agent. I also designed the homepage and property detail pages.',
+   s:['PHP','REST API','MySQL','Bricks','ACF Pro']},
+  {f:'pro', who:'Unravel', t:'PlainsCraft', img:'img/plainscraft-desktop.webp', phone:'img/plainscraft-phone.webp', award:'Best turnout', kind:'Design and build', url:'plainscraft.net', hue:'#8ba4b3',
+   d:'Site design and build for a maker of glamping wagons and restroom buildings. Product calculators that output PDF quotes, freight estimates through a Google Maps proxy endpoint, lazy loaded 3D tours, and forms moved over from HubSpot.',
+   s:['Web design','JavaScript','Formidable Forms','Google Maps API','mPDF']},
+  {f:'indie', who:'Independent', t:'Equivont', img:'img/equivont.webp', award:'Best rescue', kind:'Equestrian publication', url:'equivont.com', hue:'#d8b7c0',
+   d:'Turning an equestrian marketplace into an editorial publication. Custom post types for horses for sale and service providers, a blog migration scripted in Apps Script, and a fix for a crawler trap that was burning 914 GB of bandwidth a month.',
+   s:['Bricks','ACF Pro','Apps Script','Cloudflare']},
+  {f:'pro', who:'Unravel', t:'New Wave Scientific', img:'img/nws.webp', award:'Hardest course', kind:'Case study: backend and integrations', url:'newwavescientific.com', hue:'#c8b7c9',
+   d:'A lab testing portal where no two orders are alike. Customers build a request by choosing their tests, options and sample counts, and the site creates a custom WooCommerce product on the fly with that exact configuration and price, then clears the temporary products every night. From there, orders move through custom lab statuses, sync to QuickBooks through Zapier and a custom REST endpoint, and results are delivered through Google Drive. Built on an existing front end design; I did the backend, including migrating order history with MySQL stored procedures.',
+   s:['WooCommerce','PHP','MySQL','REST API','Zapier']},
+  {f:'pro', who:'LA Fitness', t:'Digital Lead Box', award:'Best lead', kind:'Lead generation system', hue:'#8ba4b3',
+   d:'A QR code lead program used by sales counselors across LA Fitness brands. An internal tool generated club specific fliers with unique QR codes, an in app page let staff register QR stickers to partner businesses, and a public landing page turned scans into free passes or new memberships. Every sign up was traced back to the counselor and business for commission.',
+   s:['C#','ASP.NET','SQL Server','JavaScript','Mobile deep links']}
+];
