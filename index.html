@@ -1,233 +1,979 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noimageindex, noarchive">
-<title>Mikayla Vosseller, Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
-<style>
-/*
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow, noimageindex, noarchive" />
+    <title>Mikayla Vosseller, Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /*
 VOICE: soft, whimsical, feminine; a watercolor botanical study, quiet and airy.
 IDEA: a painted flower card; pale washes on white paper, fine gold line work.
 PICTURE: a hand drawn watercolor bloom in mauve, rose and dusty blue with gold veins and stamens.
 COLOUR and TYPE: white paper, greige, sage, dusty blue, mauve, dusty rose, wine only for tiny accents, gold hairlines; Cormorant Garamond light, Jost light, one script hello.
 LAYOUT: hero with bloom, a grid of translucent project cards, about panel, closing note with a small bud.
 */
-:root{color-scheme:light;
---bg:#ffffff;
---paper:#faf7f4;
---ink:#4a3c4d;
---soft:#6c6170;
---rose:#8a6570;
---wine:#733236;
---mauve:#c8b7c9;--sage:#9cb2a5;--blue:#8ba4b3;--greige:#e3dbd3;
---gold:#c4a574;
---glass:rgba(255,255,255,.62);
---edge:rgba(255,255,255,.95)}
-:root,:root[data-theme=dark],:root[data-theme=light]{color-scheme:light;--wo:.28;--go:.2}
-*{box-sizing:border-box;min-width:0}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.75 "Jost",system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
-p{margin:0}a{color:inherit}
-:focus-visible{outline:1.5px solid var(--rose);outline-offset:4px;border-radius:8px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,18px)}
+      :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --paper: #faf7f4;
+        --ink: #4a3c4d;
+        --soft: #6c6170;
+        --rose: #8a6570;
+        --wine: #733236;
+        --mauve: #c8b7c9;
+        --sage: #9cb2a5;
+        --blue: #8ba4b3;
+        --greige: #e3dbd3;
+        --gold: #c4a574;
+        --glass: rgba(255, 255, 255, 0.62);
+        --edge: rgba(255, 255, 255, 0.95);
+      }
+      :root,
+      :root[data-theme="dark"],
+      :root[data-theme="light"] {
+        color-scheme: light;
+        --wo: 0.28;
+        --go: 0.2;
+      }
+      * {
+        box-sizing: border-box;
+        min-width: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          300 17px/1.75 "Jost",
+          system-ui,
+          sans-serif;
+        overflow-x: clip;
+        -webkit-font-smoothing: antialiased;
+      }
+      p {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 1.5px solid var(--rose);
+        outline-offset: 4px;
+        border-radius: 8px;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 max(5vw, 18px);
+      }
 
-/* watercolor washes on paper */
-.wash{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
-.wash i{position:absolute;border-radius:50%;filter:blur(90px);opacity:var(--wo)}
-.w1{width:52vmax;height:44vmax;background:var(--mauve);left:-16vmax;top:-14vmax}
-.w2{width:40vmax;height:40vmax;background:var(--sage);right:-14vmax;top:22vh}
-.w3{width:44vmax;height:36vmax;background:var(--blue);left:10vmax;bottom:-20vmax;opacity:calc(var(--wo) * .7)}
-.w4{width:30vmax;height:30vmax;background:#e7c9cf;right:18vmax;top:-10vmax}
-.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--go);mix-blend-mode:multiply}
-@media (prefers-reduced-motion:no-preference){.w1{animation:dr 30s ease-in-out infinite alternate}.w2{animation:dr 36s ease-in-out infinite alternate-reverse}.w3{animation:dr 28s ease-in-out infinite alternate}@keyframes dr{to{transform:translate(6vmax,5vmax) scale(1.08)}}}
+      /* watercolor washes on paper */
+      .wash {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .wash i {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: var(--wo);
+      }
+      .w1 {
+        width: 52vmax;
+        height: 44vmax;
+        background: var(--mauve);
+        left: -16vmax;
+        top: -14vmax;
+      }
+      .w2 {
+        width: 40vmax;
+        height: 40vmax;
+        background: var(--sage);
+        right: -14vmax;
+        top: 22vh;
+      }
+      .w3 {
+        width: 44vmax;
+        height: 36vmax;
+        background: var(--blue);
+        left: 10vmax;
+        bottom: -20vmax;
+        opacity: calc(var(--wo) * 0.7);
+      }
+      .w4 {
+        width: 30vmax;
+        height: 30vmax;
+        background: #e7c9cf;
+        right: 18vmax;
+        top: -10vmax;
+      }
+      .grain {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: var(--go);
+        mix-blend-mode: multiply;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .w1 {
+          animation: dr 30s ease-in-out infinite alternate;
+        }
+        .w2 {
+          animation: dr 36s ease-in-out infinite alternate-reverse;
+        }
+        .w3 {
+          animation: dr 28s ease-in-out infinite alternate;
+        }
+        @keyframes dr {
+          to {
+            transform: translate(6vmax, 5vmax) scale(1.08);
+          }
+        }
+      }
 
-.glass{background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--edge);border-radius:28px}
+      .glass {
+        background: var(--glass);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid var(--edge);
+        border-radius: 28px;
+      }
 
-nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding-top:24px;padding-bottom:24px}
-.sig{font:italic 400 24px/1 "Cormorant Garamond",serif;text-decoration:none;color:var(--ink)}
-nav ul{display:flex;list-style:none;margin:0;padding:0;gap:28px;flex-wrap:wrap}
-nav ul a{display:inline-block;padding:10px 0;text-decoration:none;font-size:15px;color:var(--soft);letter-spacing:.02em}
-nav ul a:hover{color:var(--rose)}
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      .sig {
+        font:
+          italic 400 24px/1 "Cormorant Garamond",
+          serif;
+        text-decoration: none;
+        color: var(--ink);
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      nav ul a {
+        display: inline-block;
+        padding: 10px 0;
+        text-decoration: none;
+        font-size: 15px;
+        color: var(--soft);
+        letter-spacing: 0.02em;
+      }
+      nav ul a:hover {
+        color: var(--rose);
+      }
 
-.hero{position:relative;padding:clamp(24px,5vw,72px) 0 clamp(48px,7vw,96px)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(16px,4vw,48px);align-items:center}
-.hello{font:400 clamp(30px,3.4vw,42px)/1 "Pinyon Script",cursive;color:var(--rose)}
-h1{font:400 clamp(58px,9.6vw,132px)/.9 "Cormorant Garamond",serif;letter-spacing:-.02em;margin:10px 0 0;color:var(--ink)}
-h1 i{display:block;padding-left:.6em;color:var(--rose)}
-.rule{width:120px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:clamp(24px,3vw,34px) 0}
-.intro{font-size:clamp(17px,1.5vw,19px);color:var(--soft);font-weight:400;max-width:31em}
-.intro b{font-weight:400;color:var(--ink)}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 26px;border-radius:999px;text-decoration:none;font-size:16px;font-weight:400;border:1px solid var(--rose);color:var(--rose);background:transparent}
-.btn.main{background:var(--mauve);border-color:var(--mauve);color:#4a3a4c}
-.btn:hover{transform:translateY(-2px)}
-.portrait{position:relative;margin:0;justify-self:center;width:100%;max-width:400px}
-.arch{position:relative;border-radius:999px 999px 26px 26px;overflow:hidden;box-shadow:0 2px 6px rgba(90,70,95,.06),0 30px 60px -24px rgba(90,70,95,.3)}
-.arch img{display:block;width:100%;height:auto}
-.portrait::before{content:"";position:absolute;inset:-14px -14px 22px 14px;border:1px solid var(--gold);border-radius:999px 999px 30px 30px;opacity:.6;z-index:-1}
-.portrait figcaption{font-size:12.5px;color:var(--soft);text-align:right;margin-top:10px}
-.devices{position:relative;margin:0;padding:0 0 46px 0}
-.screen{border-radius:16px;overflow:hidden;background:#fff;border:6px solid #fff;box-shadow:0 2px 6px rgba(90,70,95,.06),0 26px 60px -22px rgba(90,70,95,.28)}
-.screen img,.phone img,.shot img{display:block;width:100%;height:auto}
-.phone{position:absolute;right:-14px;bottom:0;width:27%;border-radius:22px;overflow:hidden;border:5px solid #fff;box-shadow:0 20px 44px -16px rgba(90,70,95,.35);background:#fff}
-.phone img{aspect-ratio:9/16;object-fit:cover;object-position:top}
-.devices figcaption{position:absolute;left:4px;bottom:6px;font-size:13.5px;color:var(--soft)}
+      .hero {
+        position: relative;
+        padding: clamp(24px, 5vw, 72px) 0 clamp(48px, 7vw, 96px);
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: clamp(16px, 4vw, 48px);
+        align-items: center;
+      }
+      .hello {
+        font:
+          400 clamp(30px, 3.4vw, 42px)/1 "Pinyon Script",
+          cursive;
+        color: var(--rose);
+      }
+      h1 {
+        font:
+          400 clamp(58px, 9.6vw, 132px)/0.9 "Cormorant Garamond",
+          serif;
+        letter-spacing: -0.02em;
+        margin: 10px 0 0;
+        color: var(--ink);
+      }
+      h1 i {
+        display: block;
+        padding-left: 0.6em;
+        color: var(--rose);
+      }
+      .rule {
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), transparent);
+        margin: clamp(24px, 3vw, 34px) 0;
+      }
+      .intro {
+        font-size: clamp(17px, 1.5vw, 19px);
+        color: var(--soft);
+        font-weight: 400;
+        max-width: 31em;
+      }
+      .intro b {
+        font-weight: 400;
+        color: var(--ink);
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        min-height: 50px;
+        padding: 0 26px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid var(--rose);
+        color: var(--rose);
+        background: transparent;
+      }
+      .btn.main {
+        background: var(--mauve);
+        border-color: var(--mauve);
+        color: #4a3a4c;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .portrait {
+        position: relative;
+        margin: 0;
+        justify-self: center;
+        width: 100%;
+        max-width: 400px;
+      }
+      .arch {
+        position: relative;
+        border-radius: 999px 999px 26px 26px;
+        overflow: hidden;
+        box-shadow:
+          0 2px 6px rgba(90, 70, 95, 0.06),
+          0 30px 60px -24px rgba(90, 70, 95, 0.3);
+      }
+      .arch img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .portrait::before {
+        content: "";
+        position: absolute;
+        inset: -14px -14px 22px 14px;
+        border: 1px solid var(--gold);
+        border-radius: 999px 999px 30px 30px;
+        opacity: 0.6;
+        z-index: -1;
+      }
+      .portrait figcaption {
+        font-size: 12.5px;
+        color: var(--soft);
+        text-align: right;
+        margin-top: 10px;
+      }
+      .devices {
+        position: relative;
+        margin: 0;
+        padding: 0 0 46px 0;
+      }
+      .screen {
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        border: 6px solid #fff;
+        box-shadow:
+          0 2px 6px rgba(90, 70, 95, 0.06),
+          0 26px 60px -22px rgba(90, 70, 95, 0.28);
+      }
+      .screen img,
+      .phone img,
+      .shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .phone {
+        position: absolute;
+        right: -14px;
+        bottom: 0;
+        width: 27%;
+        border-radius: 22px;
+        overflow: hidden;
+        border: 5px solid #fff;
+        box-shadow: 0 20px 44px -16px rgba(90, 70, 95, 0.35);
+        background: #fff;
+      }
+      .phone img {
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        object-position: top;
+      }
+      .devices figcaption {
+        position: absolute;
+        left: 4px;
+        bottom: 6px;
+        font-size: 13.5px;
+        color: var(--soft);
+      }
 
-section{padding:clamp(48px,7vw,96px) 0}
-h2{font:400 clamp(42px,5.4vw,66px)/1 "Cormorant Garamond",serif;letter-spacing:-.015em;margin:0}
-h2 i{color:var(--rose)}
-.top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
-.top p{color:var(--soft);margin-top:12px;max-width:32em}
-.filter{display:flex;gap:4px;padding:5px;border-radius:999px}
-.filter button{font:inherit;font-size:15px;border:0;background:none;color:var(--soft);min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer}
-.filter button[aria-pressed=true]{background:var(--greige);color:#5b4c5d}
+      section {
+        padding: clamp(48px, 7vw, 96px) 0;
+      }
+      h2 {
+        font:
+          400 clamp(42px, 5.4vw, 66px)/1 "Cormorant Garamond",
+          serif;
+        letter-spacing: -0.015em;
+        margin: 0;
+      }
+      h2 i {
+        color: var(--rose);
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      .top p {
+        color: var(--soft);
+        margin-top: 12px;
+        max-width: 32em;
+      }
+      .filter {
+        display: flex;
+        gap: 4px;
+        padding: 5px;
+        border-radius: 999px;
+      }
+      .filter button {
+        font: inherit;
+        font-size: 15px;
+        border: 0;
+        background: none;
+        color: var(--soft);
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .filter button[aria-pressed="true"] {
+        background: var(--greige);
+        color: #5b4c5d;
+      }
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));gap:26px;align-items:start}
-.card{padding:30px;position:relative;overflow:hidden;background:#fff;border:1px solid #f1ebee;box-shadow:0 2px 6px rgba(90,70,95,.05),0 14px 36px -14px rgba(90,70,95,.16);transition:transform .3s ease,box-shadow .3s ease;transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0))}
-.card[hidden]{display:none}.card:hover{box-shadow:0 3px 8px rgba(90,70,95,.06),0 22px 46px -16px rgba(90,70,95,.22)}
-.card::before{content:none}
-.shot{position:relative;display:block;margin:-30px -30px 24px;padding:0;border:0;background:color-mix(in srgb,var(--h) 22%,#fff);cursor:zoom-in;width:calc(100% + 60px)}
-.shot .main{aspect-ratio:16/9;overflow:hidden}
-.shot .main img{width:100%;height:100%;object-fit:cover;object-position:top}
-.shot .ph{position:absolute;right:18px;bottom:-18px;width:22%;border-radius:14px;overflow:hidden;border:4px solid #fff;box-shadow:0 14px 30px -12px rgba(90,70,95,.35)}
-.shot .ph img{aspect-ratio:9/16;object-fit:cover;object-position:top}
-.card.no-shot{background:#fff}
-dialog.zoom{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);width:100%}
-dialog.zoom::backdrop{background:rgba(74,60,77,.55);backdrop-filter:blur(4px)}
-dialog.zoom img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.4)}
-dialog.zoom button{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#4a3c4d;font-size:22px;cursor:pointer}
-.card::after{content:"";position:absolute;left:30px;right:30px;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.7}
-.meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:14px;color:var(--soft)}
-.who{font-size:12.5px;font-weight:400;padding:2px 11px;border-radius:999px;background:color-mix(in srgb,var(--h) 30%,#fff);color:var(--ink)}
-.card h3{font:500 32px/1.05 "Cormorant Garamond",serif;margin:12px 0 12px;letter-spacing:-.005em}
-.card.big h3{font-size:clamp(34px,3.3vw,42px)}
-.card p.d{color:var(--soft);font-size:16px;font-weight:400}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px;font-size:13px;color:var(--ink);font-weight:400}.chips span{padding:3px 11px;border-radius:999px;background:color-mix(in srgb,var(--h) 22%,#fff);border:1px solid color-mix(in srgb,var(--h) 35%,#fff)}
-.card a{display:inline-block;margin-top:16px;color:var(--rose);font-size:15px;text-underline-offset:5px;text-decoration-thickness:1px;text-decoration-color:var(--gold)}
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+        gap: 26px;
+        align-items: start;
+      }
+      .card {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #f1ebee;
+        box-shadow:
+          0 2px 6px rgba(90, 70, 95, 0.05),
+          0 14px 36px -14px rgba(90, 70, 95, 0.16);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        transform: perspective(900px) rotateX(var(--rx, 0))
+          rotateY(var(--ry, 0));
+      }
+      .card[hidden] {
+        display: none;
+      }
+      .card:hover {
+        box-shadow:
+          0 3px 8px rgba(90, 70, 95, 0.06),
+          0 22px 46px -16px rgba(90, 70, 95, 0.22);
+      }
+      .card::before {
+        content: none;
+      }
+      .shot {
+        position: relative;
+        display: block;
+        margin: -30px -30px 24px;
+        padding: 0;
+        border: 0;
+        background: color-mix(in srgb, var(--h) 22%, #fff);
+        cursor: zoom-in;
+        width: calc(100% + 60px);
+      }
+      .shot .main {
+        aspect-ratio: 16/9;
+        overflow: hidden;
+      }
+      .shot .main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .shot .ph {
+        position: absolute;
+        right: 18px;
+        bottom: -18px;
+        width: 22%;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 4px solid #fff;
+        box-shadow: 0 14px 30px -12px rgba(90, 70, 95, 0.35);
+      }
+      .shot .ph img {
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        object-position: top;
+      }
+      .card.no-shot {
+        background: #fff;
+      }
+      dialog.zoom {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        max-width: min(1200px, 94vw);
+        width: 100%;
+      }
+      dialog.zoom::backdrop {
+        background: rgba(74, 60, 77, 0.55);
+        backdrop-filter: blur(4px);
+      }
+      dialog.zoom img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+        box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.4);
+      }
+      dialog.zoom button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 0;
+        background: #fff;
+        color: #4a3c4d;
+        font-size: 22px;
+        cursor: pointer;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        top: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        opacity: 0.7;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        align-items: center;
+        font-size: 14px;
+        color: var(--soft);
+      }
+      .who {
+        font-size: 12.5px;
+        font-weight: 400;
+        padding: 2px 11px;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--h) 30%, #fff);
+        color: var(--ink);
+      }
+      .card h3 {
+        font:
+          500 32px/1.05 "Cormorant Garamond",
+          serif;
+        margin: 12px 0 12px;
+        letter-spacing: -0.005em;
+      }
+      .card.big h3 {
+        font-size: clamp(34px, 3.3vw, 42px);
+      }
+      .card p.d {
+        color: var(--soft);
+        font-size: 16px;
+        font-weight: 400;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--ink);
+        font-weight: 400;
+      }
+      .chips span {
+        padding: 3px 11px;
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--h) 22%, #fff);
+        border: 1px solid color-mix(in srgb, var(--h) 35%, #fff);
+      }
+      .card a {
+        display: inline-block;
+        margin-top: 16px;
+        color: var(--rose);
+        font-size: 15px;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--gold);
+      }
 
-.about .glass{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);padding:clamp(28px,5vw,64px)}
-.lead{font:300 clamp(24px,2.4vw,31px)/1.38 "Cormorant Garamond",serif;margin-top:20px}
-.sub{color:var(--soft);margin-top:16px}
-.edu{margin-top:22px;color:var(--soft);font-size:15.5px;display:grid;gap:6px}
-.edu b{font-weight:400;color:var(--ink)}
-.job{padding:18px 0;border-bottom:1px solid color-mix(in srgb,var(--gold) 35%,transparent)}
-.job:first-child{padding-top:0}
-.job small{color:var(--rose);font-size:14px}
-.job h3{font:400 25px/1.2 "Cormorant Garamond",serif;margin:2px 0 4px}
-.job p{color:var(--soft);font-size:16px}
-.skills{margin-top:22px;color:var(--soft);font-size:15.5px}
-.skills b{font-weight:400;color:var(--ink)}
+      .about .glass {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: clamp(28px, 5vw, 72px);
+        padding: clamp(28px, 5vw, 64px);
+      }
+      .lead {
+        font:
+          300 clamp(24px, 2.4vw, 31px)/1.38 "Cormorant Garamond",
+          serif;
+        margin-top: 20px;
+      }
+      .sub {
+        color: var(--soft);
+        margin-top: 16px;
+      }
+      .edu {
+        margin-top: 22px;
+        color: var(--soft);
+        font-size: 15.5px;
+        display: grid;
+        gap: 6px;
+      }
+      .edu b {
+        font-weight: 400;
+        color: var(--ink);
+      }
+      .job {
+        padding: 18px 0;
+        border-bottom: 1px solid
+          color-mix(in srgb, var(--gold) 35%, transparent);
+      }
+      .job:first-child {
+        padding-top: 0;
+      }
+      .job small {
+        color: var(--rose);
+        font-size: 14px;
+      }
+      .job h3 {
+        font:
+          400 25px/1.2 "Cormorant Garamond",
+          serif;
+        margin: 2px 0 4px;
+      }
+      .job p {
+        color: var(--soft);
+        font-size: 16px;
+      }
+      .skills {
+        margin-top: 22px;
+        color: var(--soft);
+        font-size: 15.5px;
+      }
+      .skills b {
+        font-weight: 400;
+        color: var(--ink);
+      }
 
-.hello-s{text-align:center;padding-bottom:clamp(60px,8vw,110px)}
-.hello-s .glass{padding:clamp(36px,6vw,80px) 24px;position:relative;overflow:hidden}
-.bud{width:110px;height:auto;display:block;margin:0 auto 6px}
-.hello-s h2{font-size:clamp(50px,8vw,100px)}
-.hello-s p{color:var(--soft);margin:14px auto 0;max-width:28em}
-.mail{display:inline-block;margin-top:24px;font:italic 300 clamp(26px,3.4vw,40px)/1.3 "Cormorant Garamond",serif;color:var(--rose);overflow-wrap:anywhere;text-underline-offset:7px;text-decoration-thickness:1px;text-decoration-color:var(--gold)}
-.hello-s .cta{justify-content:center}
-footer{text-align:center;color:var(--soft);font-size:13.5px;padding-bottom:28px}
+      .hello-s {
+        text-align: center;
+        padding-bottom: clamp(60px, 8vw, 110px);
+      }
+      .hello-s .glass {
+        padding: clamp(36px, 6vw, 80px) 24px;
+        position: relative;
+        overflow: hidden;
+      }
+      .bud {
+        width: 110px;
+        height: auto;
+        display: block;
+        margin: 0 auto 6px;
+      }
+      .hello-s h2 {
+        font-size: clamp(50px, 8vw, 100px);
+      }
+      .hello-s p {
+        color: var(--soft);
+        margin: 14px auto 0;
+        max-width: 28em;
+      }
+      .mail {
+        display: inline-block;
+        margin-top: 24px;
+        font:
+          italic 300 clamp(26px, 3.4vw, 40px)/1.3 "Cormorant Garamond",
+          serif;
+        color: var(--rose);
+        overflow-wrap: anywhere;
+        text-underline-offset: 7px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--gold);
+      }
+      .hello-s .cta {
+        justify-content: center;
+      }
+      footer {
+        text-align: center;
+        color: var(--soft);
+        font-size: 13.5px;
+        padding-bottom: 28px;
+      }
 
-@media(max-width:820px){.hero .wrap,.about .glass{grid-template-columns:minmax(0,1fr)}.portrait{max-width:300px;order:-1;margin-bottom:8px}.phone{right:-4px}}
-@media(max-width:600px){.card .shot{margin:-22px -22px 20px}.card{padding:22px}}
-</style>
-</head>
-<body>
-<div class="wash" aria-hidden="true"><i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i></div>
-<svg class="grain" aria-hidden="true" width="100%" height="100%"><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .08 0"/></filter><rect width="100%" height="100%" filter="url(#paper)"/></svg>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-  <filter id="wc" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="9"/><feGaussianBlur stdDeviation=".6"/></filter>
-</defs></svg>
-
-<nav aria-label="Main"><div class="wrap">
-  <a class="sig" href="#top">Mikayla Vosseller</a>
-  <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#hello">Contact</a></li><li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li></ul>
-</div></nav>
-
-<header class="hero" id="top"><div class="wrap">
-  <div>
-    <p class="hello">Hello, I'm</p>
-    <h1>Mikayla <i>Vosseller</i></h1>
-    <div class="rule"></div>
-    <p class="intro">A <b>full stack developer</b> with a designer's eye. I've spent four years building everything from C# and SQL Server systems at enterprise scale to custom WordPress, WooCommerce and LearnDash sites for more than a hundred clients.</p>
-    <div class="cta"><a class="btn main" href="#work">See my work</a><a class="btn" href="#hello">Say hello</a></div>
-  </div>
-  <figure class="portrait">
-    <div class="arch"><img src="img/mikayla.webp" alt="Mikayla smiling beside her bay horse in front of pink bougainvillea" width="720" height="900"></div>
-    <figcaption>Photo by Anasofia Vazquez</figcaption>
-  </figure>
-</div></header>
-
-<section id="work"><div class="wrap">
-  <div class="top">
-    <div><h2>Selected <i>work</i></h2><p>Agency builds from Unravel and LA Fitness, and independent projects for the equestrian world I grew up in.</p></div>
-    <div class="filter glass" role="group" aria-label="Filter projects">
-      <button type="button" data-f="all" aria-pressed="true">All</button>
-      <button type="button" data-f="pro" aria-pressed="false">Professional</button>
-      <button type="button" data-f="indie" aria-pressed="false">Independent</button>
+      @media (max-width: 820px) {
+        .hero .wrap,
+        .about .glass {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .portrait {
+          max-width: 300px;
+          order: -1;
+          margin-bottom: 8px;
+        }
+        .phone {
+          right: -4px;
+        }
+      }
+      @media (max-width: 600px) {
+        .card .shot {
+          margin: -22px -22px 20px;
+        }
+        .card {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wash" aria-hidden="true">
+      <i class="w1"></i><i class="w2"></i><i class="w3"></i><i class="w4"></i>
     </div>
-  </div>
-  <div class="grid" id="grid"></div>
-</div></section>
+    <svg class="grain" aria-hidden="true" width="100%" height="100%">
+      <filter id="paper">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency=".9"
+          numOctaves="2"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix
+          values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .08 0"
+        />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#paper)" />
+    </svg>
 
-<section class="about" id="about"><div class="wrap"><div class="glass">
-  <div>
-    <h2>A little <i>about me</i></h2>
-    <p class="lead">Before I wrote code, I was a horse trainer, running barns, coaching riders and keeping a hundred small details in order. It turned out to be good practice for software.</p>
-    <p class="sub">I learned C# and ASP.NET in my first two weeks at LA Fitness and worked independently on the team from then on. Today I'm the person clients call first: I turn their requests into clear specs, then design, build and ship them.</p>
-    <div class="edu"><p><b>Cal Poly San Luis Obispo</b>, B.S. Agribusiness, minor in Equine Science</p><p><b>UC San Diego Extended Studies</b>, Full Stack Web Development Certificate</p></div>
-  </div>
-  <div>
-    <div class="job"><small>2024 to now</small><h3>Senior Software Developer, Unravel</h3><p>WordPress and WooCommerce builds and custom applications for clients in healthcare, real estate, ecommerce and manufacturing, plus API integrations, dashboards, member flows and conversion tracking.</p></div>
-    <div class="job"><small>2022 to 2024</small><h3>Software Developer, LA Fitness</h3><p>Full stack C#, ASP.NET and JavaScript for four brand sites, internal tools and in app pages, with Entity Framework Core and SQL Server tuning.</p></div>
-    <div class="job"><small>2019 to 2023</small><h3>Marketing Manager, Equivont</h3><p>Social campaigns, newsletters, weekly blog writing and site design.</p></div>
-    <p class="skills"><b>Tools I reach for</b></p><p class="chips" style="--h:#c8b7c9"><span>JavaScript</span><span>PHP</span><span>C#</span><span>SQL</span><span>React</span><span>Node.js</span><span>ASP.NET</span><span>Entity Framework Core</span><span>WooCommerce</span><span>LearnDash</span><span>Bricks</span><span>ACF Pro</span><span>MySQL</span><span>SQL Server</span><span>REST APIs</span><span>Zapier</span></p>
-  </div>
-</div></div></section>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <filter id="wc" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency=".035"
+            numOctaves="3"
+            seed="4"
+          />
+          <feDisplacementMap in="SourceGraphic" scale="9" />
+          <feGaussianBlur stdDeviation=".6" />
+        </filter>
+      </defs>
+    </svg>
 
-<section class="hello-s" id="hello"><div class="wrap"><div class="glass">
-    <h2>Say <i>hello</i></h2>
-  <p>I'm open to full stack and front end roles, and always happy to talk about a project.</p>
-  <a class="mail" href="mailto:vossellerm@gmail.com">vossellerm@gmail.com</a>
-  <div class="cta"><a class="btn main" href="resume.pdf" target="_blank" rel="noopener">View resume</a><a class="btn" href="https://www.linkedin.com/in/mikayla-vosseller">LinkedIn</a><a class="btn" href="https://github.com/vossellerm">GitHub</a></div>
-</div></div></section>
-<footer>Designed and built by Mikayla, 2026</footer>
-<dialog class="zoom" id="zoom" aria-label="Screenshot"><button type="button" aria-label="Close">&times;</button><img alt=""></dialog>
+    <nav aria-label="Main">
+      <div class="wrap">
+        <a class="sig" href="#top">Mikayla Vosseller</a>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#hello">Contact</a></li>
+          <li>
+            <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-<script src="work.js"></script>
-<script>
-{
-const esc = v => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    <header class="hero" id="top">
+      <div class="wrap">
+        <div>
+          <p class="hello">Hello, I'm</p>
+          <h1>Mikayla <i>Vosseller</i></h1>
+          <div class="rule"></div>
+          <p class="intro">
+            A <b>full stack developer</b> with a designer's eye. I've spent four
+            years building everything from C# and SQL Server systems at
+            enterprise scale to custom WordPress, WooCommerce and LearnDash
+            sites for more than a hundred clients.
+          </p>
+          <div class="cta">
+            <a class="btn main" href="#work">See my work</a
+            ><a class="btn" href="#hello">Say hello</a>
+          </div>
+        </div>
+        <figure class="portrait">
+          <div class="arch">
+            <img
+              src="img/mikayla.webp"
+              alt="Mikayla smiling beside her bay horse in front of pink bougainvillea"
+              width="720"
+              height="900"
+            />
+          </div>
+          <figcaption>Photo by Anasofia Vazquez</figcaption>
+        </figure>
+      </div>
+    </header>
 
+    <section id="work">
+      <div class="wrap">
+        <div class="top">
+          <div>
+            <h2>Selected <i>work</i></h2>
+            <p>
+              Agency builds from Unravel and LA Fitness, and independent
+              projects for the equestrian world I grew up in.
+            </p>
+          </div>
+          <div class="filter glass" role="group" aria-label="Filter projects">
+            <button type="button" data-f="all" aria-pressed="true">All</button>
+            <button type="button" data-f="pro" aria-pressed="false">
+              Professional
+            </button>
+            <button type="button" data-f="indie" aria-pressed="false">
+              Independent
+            </button>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
 
-const grid = document.getElementById('grid');
-grid.innerHTML = (window.WORK || []).map(w => `<article class="card glass${w.big ? ' big' : ''}" data-f="${w.f}" style="--h:${w.hue}">
-  ${w.img ? `<button type="button" class="shot" data-src="${w.img}" aria-label="View larger screenshot of ${esc(w.t)}"><div class="main"><img src="${w.img}" alt="${esc(w.t)} screenshot" loading="lazy" width="1200" height="675"></div>${w.phone ? `<div class="ph"><img src="${w.phone}" alt="" loading="lazy" width="420" height="747"></div>` : ''}</button>` : ''}
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="glass">
+          <div>
+            <h2>A little <i>about me</i></h2>
+            <p class="lead">
+              Before I wrote code, I was a horse trainer, running barns,
+              coaching riders and keeping a hundred small details in order. It
+              turned out to be good practice for software.
+            </p>
+            <p class="sub">
+              I learned C# and ASP.NET in my first two weeks at LA Fitness and
+              worked independently on the team from then on. Today I'm the
+              person clients call first: I turn their requests into clear specs,
+              then design, build and ship them.
+            </p>
+            <div class="edu">
+              <p>
+                <b>Cal Poly San Luis Obispo</b>, B.S. Agribusiness, minor in
+                Equine Science
+              </p>
+              <p>
+                <b>UC San Diego Extended Studies</b>, Full Stack Web Development
+                Certificate
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="job">
+              <small>2024 to now</small>
+              <h3>Senior Software Developer, Unravel</h3>
+              <p>
+                WordPress and WooCommerce builds and custom applications for
+                clients in healthcare, real estate, ecommerce and manufacturing,
+                plus API integrations, dashboards, member flows and conversion
+                tracking.
+              </p>
+            </div>
+            <div class="job">
+              <small>2022 to 2024</small>
+              <h3>Software Developer, LA Fitness</h3>
+              <p>
+                Full stack C#, ASP.NET and JavaScript for four brand sites,
+                internal tools and in app pages, with Entity Framework Core and
+                SQL Server tuning.
+              </p>
+            </div>
+            <div class="job">
+              <small>2019 to 2023</small>
+              <h3>Marketing Manager, Equivont</h3>
+              <p>
+                Social campaigns, newsletters, weekly blog writing and site
+                design.
+              </p>
+            </div>
+            <p class="skills"><b>Tools I reach for</b></p>
+            <p class="chips" style="--h: #c8b7c9">
+              <span>JavaScript</span><span>PHP</span><span>C#</span
+              ><span>SQL</span><span>React</span><span>Node.js</span
+              ><span>ASP.NET</span><span>Entity Framework Core</span
+              ><span>WooCommerce</span><span>LearnDash</span><span>Bricks</span
+              ><span>ACF Pro</span><span>MySQL</span><span>SQL Server</span
+              ><span>REST APIs</span><span>Zapier</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hello-s" id="hello">
+      <div class="wrap">
+        <div class="glass">
+          <h2>Say <i>hello</i></h2>
+          <p>
+            I'm open to full stack and front end roles, and always happy to talk
+            about a project.
+          </p>
+          <a class="mail" href="mailto:vossellerm@gmail.com"
+            >vossellerm@gmail.com</a
+          >
+          <div class="cta">
+            <a class="btn main" href="resume.pdf" target="_blank" rel="noopener"
+              >View resume</a
+            ><a
+              class="btn"
+              href="https://www.linkedin.com/in/mikayla-vosseller"
+              target="_blank"
+              >LinkedIn</a
+            ><a class="btn" href="https://github.com/vossellerm" target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>Designed and built by Mikayla, 2026</footer>
+    <dialog class="zoom" id="zoom" aria-label="Screenshot">
+      <button type="button" aria-label="Close">&times;</button><img alt="" />
+    </dialog>
+
+    <script src="work.js"></script>
+    <script>
+      {
+        const esc = (v) =>
+          String(v).replace(
+            /[&<>"']/g,
+            (c) =>
+              ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;",
+              })[c],
+          );
+
+        const grid = document.getElementById("grid");
+        grid.innerHTML = (window.WORK || [])
+          .map(
+            (
+              w,
+            ) => `<article class="card glass${w.big ? " big" : ""}" data-f="${w.f}" style="--h:${w.hue}">
+  ${w.img ? `<button type="button" class="shot" data-src="${w.img}" aria-label="View larger screenshot of ${esc(w.t)}"><div class="main"><img src="${w.img}" alt="${esc(w.t)} screenshot" loading="lazy" width="1200" height="675"></div>${w.phone ? `<div class="ph"><img src="${w.phone}" alt="" loading="lazy" width="420" height="747"></div>` : ""}</button>` : ""}
   <div class="meta"><span class="who">${esc(w.who)}</span><span>${esc(w.kind)}</span></div><h3>${esc(w.t)}</h3><p class="d">${esc(w.d)}</p>
-  <p class="chips">${w.s.map(x => `<span>${esc(x)}</span>`).join('')}</p>
-  ${w.url ? `<a href="https://${w.url}">Visit ${esc(w.url)}</a>` : ''}</article>`).join('');
-const zoom = document.getElementById('zoom'), zimg = zoom.querySelector('img');
-grid.addEventListener('click', e => { const b = e.target.closest('.shot'); if (!b) return; zimg.src = b.dataset.src; zimg.alt = b.querySelector('img').alt; try { zoom.showModal(); } catch (_) {} });
-zoom.addEventListener('click', e => { if (e.target === zoom || e.target.closest('button')) zoom.close(); });
-const btns = document.querySelectorAll('.filter button');
-btns.forEach(b => b.addEventListener('click', () => {
-  btns.forEach(x => x.setAttribute('aria-pressed', x === b));
-  grid.querySelectorAll('.card').forEach(c => c.hidden = !(b.dataset.f === 'all' || c.dataset.f === b.dataset.f));
-}));
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(pointer:fine)').matches) {
-  grid.addEventListener('pointermove', e => {
-    const c = e.target.closest('.card'); if (!c) return;
-    const r = c.getBoundingClientRect();
-    c.style.setProperty('--ry', ((e.clientX - r.left) / r.width - .5) * 4 + 'deg');
-    c.style.setProperty('--rx', -((e.clientY - r.top) / r.height - .5) * 4 + 'deg');
-  });
-  grid.addEventListener('pointerout', e => { const c = e.target.closest('.card'); if (c && !c.contains(e.relatedTarget)) { c.style.setProperty('--ry', '0deg'); c.style.setProperty('--rx', '0deg'); } });
-}
-}
-</script>
-</body>
+  <p class="chips">${w.s.map((x) => `<span>${esc(x)}</span>`).join("")}</p>
+  ${w.url ? `<a href="https://${w.url}" target="_blank">Visit ${esc(w.url)}</a>` : ""}</article>`,
+          )
+          .join("");
+        const zoom = document.getElementById("zoom"),
+          zimg = zoom.querySelector("img");
+        grid.addEventListener("click", (e) => {
+          const b = e.target.closest(".shot");
+          if (!b) return;
+          zimg.src = b.dataset.src;
+          zimg.alt = b.querySelector("img").alt;
+          try {
+            zoom.showModal();
+          } catch (_) {}
+        });
+        zoom.addEventListener("click", (e) => {
+          if (e.target === zoom || e.target.closest("button")) zoom.close();
+        });
+        const btns = document.querySelectorAll(".filter button");
+        btns.forEach((b) =>
+          b.addEventListener("click", () => {
+            btns.forEach((x) => x.setAttribute("aria-pressed", x === b));
+            grid
+              .querySelectorAll(".card")
+              .forEach(
+                (c) =>
+                  (c.hidden = !(
+                    b.dataset.f === "all" || c.dataset.f === b.dataset.f
+                  )),
+              );
+          }),
+        );
+        if (
+          !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          matchMedia("(pointer:fine)").matches
+        ) {
+          grid.addEventListener("pointermove", (e) => {
+            const c = e.target.closest(".card");
+            if (!c) return;
+            const r = c.getBoundingClientRect();
+            c.style.setProperty(
+              "--ry",
+              ((e.clientX - r.left) / r.width - 0.5) * 4 + "deg",
+            );
+            c.style.setProperty(
+              "--rx",
+              -((e.clientY - r.top) / r.height - 0.5) * 4 + "deg",
+            );
+          });
+          grid.addEventListener("pointerout", (e) => {
+            const c = e.target.closest(".card");
+            if (c && !c.contains(e.relatedTarget)) {
+              c.style.setProperty("--ry", "0deg");
+              c.style.setProperty("--rx", "0deg");
+            }
+          });
+        }
+      }
+    </script>
+  </body>
 </html>
